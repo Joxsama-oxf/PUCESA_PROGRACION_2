@@ -1,0 +1,5 @@
+nombre=input("cual es tu nombre? ")
+edad=int(input("cual es tu edad? "))
+altura=float(input("cual es tu altura? ")) 
+print("Hola", nombre, "tienes", edad, "años")
+print("Tu altura es", altura, "metros")
