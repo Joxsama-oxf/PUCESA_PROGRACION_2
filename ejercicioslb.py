@@ -5,6 +5,7 @@ while True:
       print("\n<----------    ✨ MENÚ ✨    ---------->")
       print("\n||1|| 🍎 Busca frutas 🍓 ||1||")
       print("\n||2|| 🔍 Busca tu número 🔍 ||2||") 
+      print
       print("\n||3|| 👋 SALIDA 👋 ||3||")
 
       opcion = int(input("\n|| Selecciona una opción del menú ||--> "))
@@ -28,29 +29,37 @@ while True:
             print(f"\n'{buscar}' no se encuentra en la lista.") #Si no se encuentra el valor una vez que se acabe el -1 de la lista
       #Entonces nos dara la fruta que buscamos mas el mensaje de no se encuentra
 
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
+  
    elif opcion ==2:
-      def busqueda_num (lista, objetivo):
+      def busqueda_num (lista, objetivo, contador=0): #asignamos una funcion con el nombre de busca_num (y dentro el valor de lista y objetivo)
+         cont = 0
          inicio = 0
-         fin = len(lista) - 1
+         final = len(lista) - 1 #Asignamos una variable llamada "final" con el índice del último elemento de la 'lista'.
 
-         while inicio <= fin:
-            medio = (inicio + fin) // 2
-            if lista[medio] == objetivo:
+         while inicio <= final:
+            cont += 1
+            medio = (inicio + final) // 2 #Calcula el elemento central de la parte actual de la lista
+            if lista[medio] == objetivo: #Si el elemento central es igual al objetivo, se devuelve la posición del medio.
+                  print(f"\nNúmero de iteraciones: {cont}")
                   return medio
-            elif lista[medio] < objetivo:
-                  inicio = medio + 1
+            elif lista[medio] < objetivo: #Si el elemento central es menor que el objetivo,se busca en la mitad superior de la lista.
+                  inicio = medio + 1 #aumenta el inicio al siguiente elemento
             else:
-                  fin = medio - 1
-         return -1
+                  final = medio - 1 #Si el elemento central es mayor que el objetivo, se busca en la mitad inferior de la lista.
+            contador += 1  
+            print(f"Iteración {contador}: {lista[inicio:final+1]}")       
+         return -1, contador
 
       numeros = [10,20,30,40,50,60,70,80,90,100]
       buscar = int(input("\nIngrese el número a buscar: "))
 
-      Busqueda = busqueda_num (numeros, buscar)
+      Busqueda = busqueda_num (numeros, buscar) #asignamos una funcion con el nombre de busca_num (y dentro el valor de lista y objetivo)
       if Busqueda != -1:
          print(f"\n'{buscar}' se encontró en la posición {Busqueda}.")
       else:
-         print(f"\n'{buscar}' no se encuentra en la lista, solo numeros en intervalos de 10 en 10.")
+         print(f"\n'{buscar}' no se encuentra en la lista, solo numeros en intervalos de 10 en 10.") #Si no se encuentra el valor en la lista
+      
 
    elif opcion ==3:
       print("\n\t||--< nos vemos >--||\n")
