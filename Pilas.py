@@ -30,3 +30,15 @@ else:
     print("\nEl historial de la pila no esta vacio")
     print("\nHistorial de pila", Pila,"\n")
 
+"""Como mantener la lista original y la pila actualizada
+   - Mantener una lista original y una pila actualizada es útil para conservar el historial de cambios.
+   - Cada vez que se agrega un elemento a la pila, también se puede agregar a la lista original.
+   - De esta manera, se puede acceder a todos los elementos anteriores sin perder información.
+# Ejemplo de mantener una lista original y una pila actualizada
+# Lista original
+Lista_original = ["www.google.com", "www.python.org", "www.stackoverflow.com"]
+# Pila actualizada
+Pila_actualizada = []
+"""
+
+"SOLO AGREGO UN CAMBIO"
